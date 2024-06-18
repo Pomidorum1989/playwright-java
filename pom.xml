@@ -75,6 +75,10 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>${project.basedir}/src/test/resources/suite.xml</suiteXmlFile>
                     </suiteXmlFiles>
+                    <systemPropertyVariables>
+                        <browserName>chromium</browserName>
+                        <isHeadless>true</isHeadless>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
         </plugins>

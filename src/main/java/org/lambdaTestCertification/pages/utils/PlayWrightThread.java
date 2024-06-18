@@ -1,10 +1,12 @@
 package org.lambdaTestCertification.pages.utils;
 
 import com.microsoft.playwright.*;
+import lombok.extern.log4j.Log4j2;
 
 import java.lang.reflect.Method;
 import java.nio.file.Paths;
 
+@Log4j2
 public class PlayWrightThread {
 
     public static ThreadLocal<Playwright> playwrightThreadLocal = new ThreadLocal<>();
@@ -13,11 +15,11 @@ public class PlayWrightThread {
     public static ThreadLocal<BrowserContext> browserContextThreadLocal = new ThreadLocal<>();
     public static ThreadLocal<Page> pageThreadLocal = new ThreadLocal<>();
 
-    public static synchronized Page getPage(String browserName) {
+    public static synchronized Page getPage() {
         if (playwrightThreadLocal.get() == null) {
             Playwright playwright = Playwright.create();
             playwrightThreadLocal.set(playwright);
-            Page page = createPage(playwright, browserName);
+            Page page = createPage(playwright, System.getProperty("browserName"));
             pageThreadLocal.set(page);
         }
         return pageThreadLocal.get();
@@ -25,23 +27,20 @@ public class PlayWrightThread {
 
     private static synchronized Page createPage(Playwright playwright, String browserName) {
         BrowserType browserType = getBrowserType(playwright, browserName);
-        Browser browser = browserType.launch(new BrowserType.LaunchOptions().setHeadless(false));
-
+        boolean isHeadless = Boolean.parseBoolean(System.getProperty("isHeadless"));
+        Browser browser = browserType.launch(new BrowserType.LaunchOptions().setHeadless(isHeadless));
+        log.info("Running browser {} in headless: {}", browserName, isHeadless);
         Browser.NewContextOptions newContextOptions = new Browser.NewContextOptions();
         newContextOptions.acceptDownloads = true;
-
         BrowserContext context = browser.newContext(newContextOptions);
         context.tracing().start(new Tracing.StartOptions()
                 .setScreenshots(true)
                 .setSnapshots(true)
                 .setSources(true));
-
         browserTypeThreadLocal.set(browserType);
         browserThreadLocal.set(browser);
         browserContextThreadLocal.set(context);
-
         return context.newPage();
-
     }
 
     private static BrowserType getBrowserType(Playwright playwright, String browserName) {
@@ -62,8 +61,10 @@ public class PlayWrightThread {
         Page page = pageThreadLocal.get();
         BrowserContext browserContext = browserContextThreadLocal.get();
         if (playwright != null) {
-            browserContext.tracing().stop(new Tracing.StopOptions().setPath(Paths.get("target/trace/" + method.getName() + "_trace.zip")));
+            String fileName = "target/trace/" + method.getName() + "_trace.zip";
+            browserContext.tracing().stop(new Tracing.StopOptions().setPath(Paths.get(fileName)));
             browserContext.close();
+            log.info("Trace file was created {}", fileName);
             browserContextThreadLocal.remove();
             page.close();
             pageThreadLocal.remove();

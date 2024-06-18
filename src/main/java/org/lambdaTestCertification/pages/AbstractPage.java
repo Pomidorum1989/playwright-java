@@ -28,7 +28,8 @@ public abstract class AbstractPage {
     }
 
     protected void takeScreenShot(Page page, String screenShotName) {
-        page.screenshot(new Page.ScreenshotOptions().setFullPage(true).setPath(Paths.get("target/screenshots/" + screenShotName + ".png")));
-        log.info("Screenshot {} was created", screenShotName);
+        String fileName = "target/screenshots/" + screenShotName + ".png";
+        page.screenshot(new Page.ScreenshotOptions().setFullPage(true).setPath(Paths.get(fileName)));
+        log.info("Screenshot {} was created", fileName);
     }
 }

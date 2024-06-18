@@ -24,8 +24,9 @@ public class TestBase {
 
     @BeforeMethod
     void createContextAndPage(Method method) {
+        log.warn("********************************************");
         log.warn("{} is started", method.getName());
-        page = PlayWrightThread.getPage("chromium");
+        page = PlayWrightThread.getPage();
     }
 
     @AfterMethod

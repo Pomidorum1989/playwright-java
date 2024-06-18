@@ -5,7 +5,7 @@
             <PatternLayout disableAnsi="false" pattern="%highlight{%-5level}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=bright_white, DEBUG=green bold, TRACE=blue} %d{HH:mm:ss.SSS} %style{[%t]}{magenta} %-100style{%logger{36}.%M():%L}{cyan} - %m%n"/>
         </Console>
         <File name="File" fileName="target/logs/playwright.log">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p [%t] [%c{1}]:%L - %m%n"/>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p [%t] %-50style{[%c{1}]:%L} - %m%n"/>
         </File>
     </Appenders>
     <Loggers>
