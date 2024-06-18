@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Lambda Test Suite" parallel="classes" thread-count="3" verbose="1">
+    <test name="Lambda Tests Scenarios">
+        <classes>
+            <class name="org.lambdaTestCertification.TestScenarios"/>
+        </classes>
+    </test>
+</suite>
