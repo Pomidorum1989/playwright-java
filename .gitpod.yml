@@ -3,4 +3,4 @@
 
 tasks:
   - init: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install-deps"
-    command: mvn test -DbrowserName=chromium -DisHeadless=true
+    command: mvn test -DbrowserName=chromium -DisHeadless=true -DisLambdaTest=true -Pparallel-methods

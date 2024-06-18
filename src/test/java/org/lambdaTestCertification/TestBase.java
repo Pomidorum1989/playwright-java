@@ -2,7 +2,9 @@ package org.lambdaTestCertification;
 
 import com.microsoft.playwright.*;
 import lombok.extern.log4j.Log4j2;
+import org.lambdaTestCertification.pages.utils.PlayWrightAPI;
 import org.lambdaTestCertification.pages.utils.PlayWrightThread;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 import org.lambdaTestCertification.pages.*;
 
@@ -23,15 +25,22 @@ public class TestBase {
     InputFormPage inputFormPage;
 
     @BeforeMethod
-    void createContextAndPage(Method method) {
+    void beforeMethod(Method method) {
         log.warn("********************************************");
         log.warn("{} is started", method.getName());
         page = PlayWrightThread.getPage();
     }
 
     @AfterMethod
-    void closeContext(Method method) {
-        log.warn("{} is finished", method.getName());
+    void afterMethod(ITestResult result, Method method) {
+        String testName = method.getName();
+        if (result.isSuccess()) {
+            PlayWrightAPI.setTestStatus("passed", testName + " passed", page);
+            log.warn("{} is finished with status passed", testName);
+        } else {
+            PlayWrightAPI.setTestStatus("failed", testName + " failed", page);
+            log.warn("{} is finished with status failed", testName);
+        }
         PlayWrightThread.closePage(method);
     }
 }

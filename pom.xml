@@ -54,8 +54,28 @@
             <version>1.18.32</version>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>parallel-methods</id>
+            <properties>
+                <parallel.mode>methods</parallel.mode>
+                <thread.count>2</thread.count>
+            </properties>
+        </profile>
+        <profile>
+            <id>parallel-classes</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <parallel.mode>classes</parallel.mode>
+                <thread.count>2</thread.count>
+            </properties>
+        </profile>
+    </profiles>
+
     <build>
         <plugins>
             <plugin>
@@ -78,7 +98,10 @@
                     <systemPropertyVariables>
                         <browserName>chromium</browserName>
                         <isHeadless>true</isHeadless>
+                        <isLambdaTest>true</isLambdaTest>
                     </systemPropertyVariables>
+                    <parallel>${parallel.mode}</parallel>
+                    <threadCount>${thread.count}</threadCount>
                 </configuration>
             </plugin>
         </plugins>

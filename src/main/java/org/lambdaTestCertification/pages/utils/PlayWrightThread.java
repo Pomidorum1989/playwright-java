@@ -28,7 +28,14 @@ public class PlayWrightThread {
     private static synchronized Page createPage(Playwright playwright, String browserName) {
         BrowserType browserType = getBrowserType(playwright, browserName);
         boolean isHeadless = Boolean.parseBoolean(System.getProperty("isHeadless"));
-        Browser browser = browserType.launch(new BrowserType.LaunchOptions().setHeadless(isHeadless));
+        Browser browser;
+        String url = LambdaTestCapabilities.CDP_URL + LambdaTestCapabilities.generateCapabilities();
+        if (Boolean.parseBoolean(System.getProperty("isLambdaTest"))) {
+            log.info("Connecting to {}", url);
+            browser = browserType.connect(url);
+        } else {
+            browser = browserType.launch(new BrowserType.LaunchOptions().setHeadless(isHeadless));
+        }
         log.info("Running browser {} in headless: {}", browserName, isHeadless);
         Browser.NewContextOptions newContextOptions = new Browser.NewContextOptions();
         newContextOptions.acceptDownloads = true;
@@ -44,8 +51,9 @@ public class PlayWrightThread {
     }
 
     private static BrowserType getBrowserType(Playwright playwright, String browserName) {
-        switch (browserName) {
+        switch (browserName.toLowerCase()) {
             case "chromium":
+            case "chrome":
                 return playwright.chromium();
             case "webkit":
                 return playwright.webkit();
