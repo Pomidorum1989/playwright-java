@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f418f4c1-e170-4fc3-b00c-58575e11c809" name="Changes" comment="1. Updated gitpod.yml file">
-      <change beforePath="$PROJECT_DIR$/.gitpod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.gitpod.yml" afterDir="false" />
+    <list default="true" id="c7596993-081d-4297-b79f-4a6a74f88c80" name="Changes" comment="1. Updated gitpod.yml file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
