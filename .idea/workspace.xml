@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2cce92dc-2dfc-44ef-91b2-b99d9d5ecffe" name="Changes" comment="1. Logging update&#10;2. Added system vars for selection of browser and headless mode from cmd">
+      <change afterPath="$PROJECT_DIR$/.gitpod.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Pomidorum1989&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Pomidorum1989/playwright-java.git&quot;,
+    &quot;accountId&quot;: &quot;280245aa-873d-416a-946a-ea4645c456b5&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2hwSjB0C2G0jy1YmwdaUKzN2zL4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;TestNG.C:/Users/Dorum/IdeaProjects/LambdaTestCertification/src/test/resources/suite.xml.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TestScenario.testOne.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TestScenarios.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TestScenarios.testOne.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TestScenarios.testThree.executor&quot;: &quot;Debug&quot;,
+    &quot;TestNG.TestScenarios.testTwo.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.TestScenarios.testOne">
+    <configuration name="C:/Users/Dorum/IdeaProjects/LambdaTestCertification/src/test/resources/suite.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="LambdaTestCertification" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/suite.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestScenarios" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="LambdaTestCertification" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.lambdaTestCertification.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.lambdaTestCertification" />
+      <option name="MAIN_CLASS_NAME" value="org.lambdaTestCertification.TestScenarios" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestScenarios.testOne" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="LambdaTestCertification" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.lambdaTestCertification.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.lambdaTestCertification" />
+      <option name="MAIN_CLASS_NAME" value="org.lambdaTestCertification.TestScenarios" />
+      <option name="METHOD_NAME" value="testOne" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestScenarios.testThree" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="LambdaTestCertification" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.lambdaTestCertification.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.lambdaTestCertification" />
+      <option name="MAIN_CLASS_NAME" value="org.lambdaTestCertification.TestScenarios" />
+      <option name="METHOD_NAME" value="testThree" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestScenarios.testTwo" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="LambdaTestCertification" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.lambdaTestCertification.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.lambdaTestCertification" />
+      <option name="MAIN_CLASS_NAME" value="org.lambdaTestCertification.TestScenarios" />
+      <option name="METHOD_NAME" value="testTwo" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.TestScenarios.testOne" />
+        <item itemvalue="TestNG.C:/Users/Dorum/IdeaProjects/LambdaTestCertification/src/test/resources/suite.xml" />
+        <item itemvalue="TestNG.TestScenarios.testThree" />
+        <item itemvalue="TestNG.TestScenarios" />
+        <item itemvalue="TestNG.TestScenarios.testTwo" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2cce92dc-2dfc-44ef-91b2-b99d9d5ecffe" name="Changes" comment="" />
+      <created>1718503787108</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1718503787108</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1718683791072</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718683791072</updated>
+    </task>
+    <task id="LOCAL-00002" summary="1. Logging update&#10;2. Added system vars for selection of browser and headless mode from cmd">
+      <option name="closed" value="true" />
+      <created>1718687188014</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1718687188014</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="1. Logging update&#10;2. Added system vars for selection of browser and headless mode from cmd" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Logging update&#10;2. Added system vars for selection of browser and headless mode from cmd" />
+  </component>
+</project>
