@@ -7,64 +7,74 @@
     <artifactId>lambdaTest</artifactId>
     <version>0.1-SNAPSHOT</version>
     <name>Playwright Lambda Test Certification</name>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <playwright.version>1.44.0</playwright.version>
+        <testng.version>7.10.2</testng.version>
+        <slf4j.version>2.0.13</slf4j.version>
+        <log4j.version>2.23.1</log4j.version>
+        <lombok.version>1.18.32</lombok.version>
+        <okhttp.version>4.12.0</okhttp.version>
+        <gson.version>2.11.0</gson.version>
+        <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
+        <maven.surefire.plugin.version>3.3.0</maven.surefire.plugin.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.microsoft.playwright</groupId>
             <artifactId>playwright</artifactId>
-            <version>1.44.0</version>
+            <version>${playwright.version}</version>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.10.2</version>
+            <version>${testng.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>2.0.13</version>
+            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>2.0.13</version>
+            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
-            <version>2.23.1</version>
+            <version>${log4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.23.1</version>
+            <version>${log4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j-impl</artifactId>
-            <version>2.23.1</version>
+            <version>${log4j.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.32</version>
+            <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
-            <version>4.12.0</version>
+            <version>${okhttp.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-            <version>2.11.0</version>
+            <version>${gson.version}</version>
         </dependency>
-
     </dependencies>
 
     <profiles>
@@ -92,7 +102,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
+                <version>${maven.compiler.plugin.version}</version>
                 <configuration>
                     <source>11</source>
                     <target>11</target>
@@ -101,7 +111,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>${maven.surefire.plugin.version}</version>
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>${project.basedir}/src/test/resources/suite.xml</suiteXmlFile>

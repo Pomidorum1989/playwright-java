@@ -16,9 +16,8 @@ public class LambdaTestCapabilities {
     private static final JsonObject CAPABILITIES = new JsonObject();
     private static final JsonObject LAMBDA_CAPABILITIES = new JsonObject();
 
-    public static String generateCapabilities() {
-        // Browsers allowed: `Chrome`, `MicrosoftEdge`, `pw-chromium`, `pw-firefox` and `pw-webkit`
-        CAPABILITIES.addProperty("browserName", "Chrome");
+    public static String generateCapabilities(String browserName) {
+        CAPABILITIES.addProperty("browserName", browserName);
         CAPABILITIES.addProperty("browserVersion", "latest");
         LAMBDA_CAPABILITIES.addProperty("platform", "Windows 10");
         LAMBDA_CAPABILITIES.addProperty("name", "Playwright 101");

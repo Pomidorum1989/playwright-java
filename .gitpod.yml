@@ -2,5 +2,6 @@
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
 tasks:
-  - init: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install-deps"
-    command: mvn test -DbrowserName=chromium -DisHeadless=true -DisLambdaTest=true -Pparallel-methods
+  - name: Starting the LambdaTest run
+    init: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install-deps"
+    command: mvn clean test -DisLambdaTest=true -Pparallel-methods

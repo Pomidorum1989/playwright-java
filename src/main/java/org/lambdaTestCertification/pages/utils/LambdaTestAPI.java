@@ -10,10 +10,6 @@ import lombok.extern.log4j.Log4j2;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,18 +26,18 @@ public class LambdaTestAPI {
         }
     }
 
-    public static String generateAuthToken() {
+    public static String generateBase64AuthToken() {
         String s = USER_NAME + ":" + PASSWORD;
         String encodedString = Base64.getEncoder().encodeToString(s.getBytes());
         log.info("Encoded token: {}", encodedString);
         return encodedString;
     }
 
-    public static void getTestId(Playwright playwright) {
+    public static String[] getRunInfo(Playwright playwright) {
         APIRequest.NewContextOptions options = new APIRequest.NewContextOptions().setBaseURL("https://api.lambdatest.com/");
         Map<String, String> headers = new HashMap<>();
         headers.put("accept", "application/json");
-        headers.put("Authorization", "Basic " + LambdaTestAPI.generateAuthToken());
+        headers.put("Authorization", "Basic " + LambdaTestAPI.generateBase64AuthToken());
         options.setExtraHTTPHeaders(headers);
         APIRequestContext apiRequestContext = playwright.request().newContext(options);
 
@@ -60,11 +56,15 @@ public class LambdaTestAPI {
             for (JsonElement element : data) {
                 JsonObject session = element.getAsJsonObject();
                 String testId = session.get("test_id").getAsString();
+                String buildId = session.get("build_id").getAsString();
                 log.info("Test ID: {}", testId);
+                log.info("Build ID: {}", buildId);
+                return new String[]{testId, buildId};
             }
         } else {
             log.error("Request failed: {}", response.status() + " - " + response.statusText());
             log.error(response.text());
         }
+        return new String[]{};
     }
 }
