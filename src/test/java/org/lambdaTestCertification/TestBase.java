@@ -1,18 +1,20 @@
 package org.lambdaTestCertification;
 
-import com.microsoft.playwright.*;
+import com.microsoft.playwright.Page;
 import lombok.extern.log4j.Log4j2;
 import org.apache.logging.log4j.ThreadContext;
+import org.lambdaTestCertification.pages.DragAndDropPage;
+import org.lambdaTestCertification.pages.InputFormPage;
+import org.lambdaTestCertification.pages.PlaygroundPage;
 import org.lambdaTestCertification.pages.utils.LambdaTestAPI;
 import org.lambdaTestCertification.pages.utils.PlayWrightThread;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
-import org.testng.annotations.*;
-import org.lambdaTestCertification.pages.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -20,15 +22,15 @@ import java.util.Random;
 @Log4j2
 public class TestBase {
     //Playwright
-    Page page;
+    protected Page page;
 
     //Pages
-    PlaygroundPage playgroundPage;
-    DragAndDropPage dragAndDropPage;
-    InputFormPage inputFormPage;
+    protected PlaygroundPage playgroundPage;
+    protected DragAndDropPage dragAndDropPage;
+    protected InputFormPage inputFormPage;
 
     //TestNG
-    ThreadLocal<String> methodName = new ThreadLocal<>();
+    protected ThreadLocal<String> methodName = new ThreadLocal<>();
 
     @BeforeMethod
     void beforeMethod(ITestContext context, Method method) {

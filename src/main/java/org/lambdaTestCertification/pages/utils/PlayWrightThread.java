@@ -3,8 +3,8 @@ package org.lambdaTestCertification.pages.utils;
 import com.microsoft.playwright.*;
 import lombok.extern.log4j.Log4j2;
 
-import java.lang.reflect.Method;
 import java.nio.file.Paths;
+import java.util.Objects;
 
 @Log4j2
 public class PlayWrightThread {
@@ -16,7 +16,7 @@ public class PlayWrightThread {
     public static ThreadLocal<Page> pageThreadLocal = new ThreadLocal<>();
 
     public static synchronized Page getPage(String browserName) {
-        if (playwrightThreadLocal.get() == null) {
+        if (Objects.isNull(playwrightThreadLocal.get())) {
             Playwright playwright = Playwright.create();
             playwrightThreadLocal.set(playwright);
             Page page = createPage(playwright, browserName);
@@ -67,8 +67,8 @@ public class PlayWrightThread {
         Playwright playwright = playwrightThreadLocal.get();
         Page page = pageThreadLocal.get();
         BrowserContext browserContext = browserContextThreadLocal.get();
-        if (playwright != null) {
-            String fileName = "target/trace/" + methodName + "_trace.zip";
+        if (Objects.nonNull(playwright)) {
+            String fileName = String.format("target/trace/%s_trace.zip", methodName);
             browserContext.tracing().stop(new Tracing.StopOptions().setPath(Paths.get(fileName)));
             browserContext.close();
             log.info("Trace file was created {}", fileName);

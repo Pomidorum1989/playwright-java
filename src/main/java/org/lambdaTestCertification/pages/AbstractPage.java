@@ -1,7 +1,6 @@
 package org.lambdaTestCertification.pages;
 
 import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Tracing;
 import lombok.extern.log4j.Log4j2;
 
 import java.nio.file.Paths;

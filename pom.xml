@@ -10,15 +10,15 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
+        <maven.surefire.plugin.version>3.3.0</maven.surefire.plugin.version>
         <playwright.version>1.44.0</playwright.version>
         <testng.version>7.10.2</testng.version>
         <slf4j.version>2.0.13</slf4j.version>
         <log4j.version>2.23.1</log4j.version>
-        <lombok.version>1.18.32</lombok.version>
+        <lombok.version>1.18.34</lombok.version>
         <okhttp.version>4.12.0</okhttp.version>
         <gson.version>2.11.0</gson.version>
-        <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
-        <maven.surefire.plugin.version>3.3.0</maven.surefire.plugin.version>
     </properties>
 
     <dependencies>
@@ -127,4 +127,11 @@
             </plugin>
         </plugins>
     </build>
+    <repositories>
+        <repository>
+            <id>maven_central</id>
+            <name>Maven Central</name>
+            <url>https://repo.maven.apache.org/maven2/</url>
+        </repository>
+    </repositories>
 </project>
